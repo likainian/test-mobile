@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.fly.core.widget.StatusBarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.fly.test.widget.WaterView
+            android:id="@+id/iv_image"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_select"
+                android:text="相册"
+                android:background="@drawable/shape_edefff_r5"
+                android:gravity="center"
+                android:textColor="#3245F6"
+                android:layout_width="80dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/tv_remove"
+                android:text="预览"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/shape_edefff_r5"
+                android:gravity="center"
+                android:textColor="#3245F6"
+                android:layout_width="80dp"
+                android:layout_height="40dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

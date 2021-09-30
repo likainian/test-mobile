@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.fly.core.widget.StatusBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/rlToolbar"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/toolbar_back"
+                    android:layout_width="10dp"
+                    android:layout_height="18dp"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:maxLines="1"
+                android:drawableRight="@drawable/selector_media_folder_expand"
+                android:drawablePadding="3dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="44dp"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="#262626"
+                android:textSize="17sp" />
+            <FrameLayout
+                android:id="@+id/fl_confirm"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+                <TextView
+                    android:layout_gravity="center"
+                    android:text="确定"
+                    android:textSize="17sp"
+                    android:textColor="#333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+        </RelativeLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_folder"
+                android:visibility="gone"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

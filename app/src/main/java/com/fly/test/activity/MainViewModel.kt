@@ -2,6 +2,7 @@ package com.fly.test.activity
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
+import com.fly.core.base.BaseObserver
 import com.fly.test.model.PageBean
 import com.fly.test.model.UserBean
 import com.fly.core.base.BaseViewModel
@@ -34,10 +35,10 @@ class MainViewModel @ViewModelInject constructor(private val userRepo: UserRepo)
     private fun requestUser(keyword: String, page: Int) {
         addDisposable(
             userRepo.requestUser(keyword, page)
-                .subscribe({
-                    userData.postValue(it)
-                }, { e ->
-                    e.printStackTrace()
+                .subscribeWith(object : BaseObserver<PageBean<UserBean>>() {
+                    override fun onSuccess(tBaseResponse: PageBean<UserBean>) {
+                        userData.postValue(tBaseResponse)
+                    }
                 })
         )
     }
