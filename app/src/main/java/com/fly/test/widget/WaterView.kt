@@ -91,6 +91,16 @@ class WaterView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             }
 
     }
+    fun getRect():RectF?{
+        bitmap?.let {originBitmap->
+            val startX = originBitmap.width*(rectF.left-imageRectF.left)/imageRectF.width()
+            val endX = originBitmap.width*(rectF.right-imageRectF.left)/imageRectF.width()
+            val startY = originBitmap.height*(rectF.top-imageRectF.top)/imageRectF.height()
+            val endY = originBitmap.height*(rectF.bottom-imageRectF.top)/imageRectF.height()
+            return RectF(startX,startY,endX,endY)
+        }
+        return null
+    }
 
     /**
      * 色值上叠加

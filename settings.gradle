@@ -2,3 +2,4 @@ rootProject.name = "Test"
 include ':app'
 include ':core'
 include ':lib_photo'
+include ':lib_video'

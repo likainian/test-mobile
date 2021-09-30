@@ -69,6 +69,7 @@ dependencies {
 
     implementation project(path: ':core')
     implementation project(path: ':lib_photo')
+    implementation project(path: ':lib_video')
 
     /*Dagger2*/
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -84,5 +85,7 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-vision:1.0.2.300'
     // 引入人脸检测能力包
     implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:1.0.2.301'
+
+    implementation 'com.github.yellowcath:VideoProcessor:2.4.2'
 
 }
